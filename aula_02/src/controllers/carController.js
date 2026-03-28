@@ -7,6 +7,8 @@ async function listCars(req, res){
     res.json(cars);
 }
 
+//Listar carro específico 
+
 async function getCar(req, res){
     const car = await carRepository.getCarsById(req.params.id);
 
@@ -17,6 +19,8 @@ async function getCar(req, res){
     res.json(car);
 }
 
+//registrar novo carro
+
 async function createCar(req, res){
     const car = await carRepository.registerCar(req.body);
 
@@ -26,6 +30,8 @@ async function createCar(req, res){
 
     res.json(car);
 }
+
+//Atualizar os dados de um carro existente
 
 async function updateCar(req, res){
     if (!req.body){
@@ -40,6 +46,8 @@ async function updateCar(req, res){
 
     res.json(car);
 }
+
+//Deletar um carro
 
 async function deleteCar(req, res){
     const car = await carRepository.destroyCar(req.params.id);
